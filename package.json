@@ -10,5 +10,10 @@
   "license": "ISC",
   "bin": {
     "newsfind": "./bin/index.js"
+  },
+  "dependencies": {
+    "boxen": "^7.0.1",
+    "chalk": "^5.2.0",
+    "yargs": "^17.6.2"
   }
 }
