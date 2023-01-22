@@ -1,27 +1,24 @@
 const axios = require('axios').default;
-require('dotenv').config();
 
-getNews = async (keywordP, countP) => {
+exports.getNews = async (keywordP, countP) => {
+
 
     const reqbody = {
         action: "getArticles",
         keyword: keywordP,
+        lang: "eng",
         articlesPage: 1,
         articlesCount: countP,
         articlesSortBy: "date",
         articlesSortByAsc: false,
-        articlesArticleBodyLen: -1,
+        articlesArticleBodyLen: 500,
         resultType: "articles",
         dataType: [
-          "news",
-          "pr"
+          "news"
         ],
         apiKey: process.env.apiKey,
         forceMaxDataTimeWindow: 31
     };
-
-
-    
 
     try{
         const response = await axios.post('http://eventregistry.org/api/v1/article/getArticles', reqbody, {
@@ -29,12 +26,9 @@ getNews = async (keywordP, countP) => {
                 "Content-Type": "application/json"
             }
         });
-        console.log(response.data);
+        return response.data;
     }catch(error){
-        console.log(error);
+       console.log(error);
+        return "";
     }
-
 }
-
-
-getNews("BArack, 5");
