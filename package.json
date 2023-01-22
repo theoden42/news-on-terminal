@@ -18,6 +18,8 @@
     "clear": "^0.1.0",
     "dotenv": "^16.0.3",
     "figlet": "^1.5.2",
+    "gradient-string": "^2.0.2",
+    "gradient-strings": "^0.0.1-security",
     "yargs": "^17.6.2"
   }
 }

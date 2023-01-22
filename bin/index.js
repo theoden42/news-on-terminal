@@ -6,6 +6,7 @@ const boxen = require('boxen');
 const clear = require('clear');
 const figlet = require('figlet');
 const { getNews } = require('../scripts/newsfetch');
+const  gradient  = require('gradient-string');
 require('dotenv').config();
 
 
@@ -21,9 +22,9 @@ fetchnews = async(keyword, count) => {
     });
 };
 
-
-const introduction = chalk.bold.yellowBright(figlet.textSync('NEWS ON TERMINAL', { horizontalLayout: 'full' }));
-const usage = chalk.bold.keyword('orange')("\nCommand to execute: \nnewsfind -k=<keyword you want to search for> -c=<number of articles you want to read should not exceed 5>");
+const coolGradient = gradient(['#FF0000', '#00FF00', '#0000FF']);
+const introduction = gradient.rainbow(figlet.textSync("NEWS ON TERMINAL", { horizontalLayout: 'full' }));
+const usage = chalk.bold.keyword('violet')("\nCommand to execute: \nnewsfind -k=<keyword you want to search for> -c=<number of articles you want to read>");
 
 
 const options = yargs
@@ -39,9 +40,6 @@ const argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 console.log(introduction);
 const k = argv.k;
 const c = argv.c;
-if(c < 5){
-    yargs.help();
-}
 fetchnews(argv.k, argv.c);
 
 

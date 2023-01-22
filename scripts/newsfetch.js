@@ -1,8 +1,6 @@
 const axios = require('axios').default;
 
 exports.getNews = async (keywordP, countP) => {
-
-
     const reqbody = {
         action: "getArticles",
         keyword: keywordP,
