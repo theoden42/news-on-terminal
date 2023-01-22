@@ -2,7 +2,7 @@
 
 News on terminal helps you to get news that you want right on your terminal so that you don't get bored while coding!
 
-<img src="./images/example.png" alt="example">
+<img src="./images/examples.png" alt="example">
 
 ## Steps to get the CLI working: 
 
